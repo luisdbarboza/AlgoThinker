@@ -1,0 +1,86 @@
+.lecture-page {
+  display: grid;
+  grid-template-areas:
+    "navigation navigation"
+    "main main";
+  grid-template-rows: 50px auto;
+  height: 100%;
+
+  header {
+    grid-area: navigation;
+
+    nav {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: darken($color: white, $amount: 3);
+      height: 50px;
+
+      .select-mode {
+        flex: 1 1 50%;
+        display: flex;
+        align-self: flex-end;
+
+        .tab-link {
+          $tabBgColor: darken(white, 10);
+          $selectedTabBgColor: lighten($color: #005B54, $amount: 10);
+          @include flexCenterItems;
+          position: relative;
+          padding: 0.5rem;
+          background-color: $tabBgColor;
+          
+          &.selected {
+            color: white;
+            background-color: $selectedTabBgColor;
+
+            &::after {
+              position: absolute;
+              content: "";
+              bottom: -10px;
+              border-width: 15px 15px 0px;
+              border-style: solid;
+              border-color: $selectedTabBgColor transparent;
+              display: block;
+              width: 0;
+            }
+
+            &:hover {
+              $selectedTabHoverBg: lighten($selectedTabBgColor, 5); 
+              background-color: $selectedTabHoverBg;
+
+              &::after {
+                border-color: $selectedTabHoverBg transparent;
+              }
+            }
+          }
+
+          &:hover {
+            background-color: darken(white, 20);
+            cursor: pointer;
+          }
+        }
+      }
+
+      .code-editor-settings {
+        flex: 1 1 50%;
+      }
+    }
+  }
+
+  main {
+    grid-area: main;
+    display: flex;
+
+      .selected-mode {
+        flex: 1 1;
+        width: 50%;
+        grid-area: mode;
+      }
+
+      .code-controls {
+        flex: 1 1;
+        width: 50%;
+        grid-area: code;
+      }
+  }
+}

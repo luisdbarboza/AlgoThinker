@@ -1,0 +1,28 @@
+.topbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 50px;
+    background-color: #005B54;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .menuBtn {
+        margin-left: 10px;
+        width: 40px;
+        background-color: darken($color: #005B54, $amount: 10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: darken($color: #005B54, $amount: 5);
+            cursor: pointer;
+        }
+    }
+}

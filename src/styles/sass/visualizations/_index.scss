@@ -1,0 +1,26 @@
+.array-item {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: white;
+    color: black;
+    stroke: black;
+
+    //visualizacion ordenamiento por burbuja
+    &.burbuja-mayor, &.seleccion-mas-bajo {
+        fill: #413EE8;
+        color: white;
+        font-weight: bold;
+        stroke: none;
+    }
+
+    &.burbuja-comparacion, &.seleccion-escaneo {
+        fill: #E83E41; 
+        color: white;
+        font-weight: bold;
+        stroke: none;
+    }
+
+    &.burbuja-ordenado, &.seleccion-ordenado {
+        stroke-width: 2;
+    }
+}

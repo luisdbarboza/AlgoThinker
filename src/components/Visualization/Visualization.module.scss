@@ -1,0 +1,59 @@
+.visualizationWrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); //100px = topBar + modesBar height
+  width: 100%;
+  overflow: hidden;
+
+  .svgCanvasWrapper {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+
+    .svg-canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .visualizationControls {
+    height: 10%;
+    border-top: 0.5px solid gray;
+    // @include flexCenterItems;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      $color: darken(white, 8);
+      height: 3rem;
+      background-color: $color;
+      border: none;
+      width: 3rem;
+      height: 2rem;
+    //   @include flexCenterItems;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+      &:disabled {
+        background-color: darken(white, 3);
+
+        &:hover {
+          cursor: default;
+          background-color: darken(white, 3);
+        }
+      }
+
+      & + button {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        background-color: darken(white, 12);
+        cursor: pointer;
+      }
+    }
+  }
+}

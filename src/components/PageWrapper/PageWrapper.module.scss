@@ -1,0 +1,23 @@
+@import "../../styles/sass/abstracts/variables";
+
+.page-wrapper {
+  margin-top: 50px;
+  display: flex;
+
+  .page-content {
+    margin-left: 60px;
+    width: calc(100% - #{$sidebar-width});
+    height: calc(100vh - #{$topbar-height});
+    background-color: $page-background-color;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    .page-content {
+      margin-left: 0px;
+      width: 100%;
+    }
+  }
+}

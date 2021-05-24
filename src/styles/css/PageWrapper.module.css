@@ -1,0 +1,1 @@
+.page-wrapper{margin-top:50px;display:flex}.page-wrapper .page-content{margin-left:60px;width:calc(100% - 60px);height:calc(100vh - 50px);background-color:#fff;overflow-y:scroll}@media (max-width: 768px){.page-wrapper .page-content{margin-left:0px;width:100%}}
